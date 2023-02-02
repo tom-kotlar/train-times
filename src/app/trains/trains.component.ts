@@ -1,9 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { SingleJourneyFare } from 'src/models/interface';
 import { TrainsService } from './trains.service';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { StepperOrientation } from '@angular/material/stepper';
-import { Observable, Subscription, map } from 'rxjs';
+import { Subscription, map } from 'rxjs';
 
 @Component({
   selector: 'app-trains',
@@ -12,20 +10,17 @@ import { Observable, Subscription, map } from 'rxjs';
 })
 export class TrainsComponent implements OnDestroy {
   singleJourneyFares!: SingleJourneyFare[];
-  fersSubs!: Subscription;
-  stepperOrientation: Observable<StepperOrientation>;
+  fearsSubs!: Subscription;
+ 
 
   constructor(
     private trainsService: TrainsService,
-    breakpointObserver: BreakpointObserver
   ) {
-    this.stepperOrientation = breakpointObserver
-      .observe('(min-width: 800px)')
-      .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
+   
   }
 
   ngOnInit(): void {
-    this.fersSubs = this.getTrainsData$.subscribe((data) =>
+    this.fearsSubs = this.getTrainsData$.subscribe((data) =>
       data.map((value) => {
         this.singleJourneyFares = value.singleJourneyFares;
       })
@@ -67,6 +62,6 @@ export class TrainsComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.fersSubs.unsubscribe();
+    this.fearsSubs.unsubscribe();
   }
 }
