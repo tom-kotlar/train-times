@@ -73,7 +73,7 @@ you will install Dependencies & node_modules folder:
 
 - User is able to click on Journey Details and view Train Tickets
 
-   <img  src="src/assets/trains.png" width="500px" style="padding-left:50px;"/>
+   <img  src="src/assets/tickets.png" width="500px" style="padding-left:50px;"/>
 
 - User is able to sort Trains Times and Train Tickets
 
