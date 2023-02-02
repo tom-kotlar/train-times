@@ -1,0 +1,17 @@
+mat-card:hover,
+mat-card:focus {
+  transform: scale(1.02);
+  transition: .2s;
+}
+
+
+.container {
+  max-width: 100%;
+  margin: 10px 10px
+}
+
+
+.mat-expansion-panel-header,
+.mat-expansion-panel-header {
+ color : rgb(84, 68, 153);
+}
